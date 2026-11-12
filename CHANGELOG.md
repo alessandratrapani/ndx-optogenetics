@@ -7,8 +7,8 @@
   - `ViralVectorInjection` coordinates move into the optional `viral_injection_coordinates` group. `location` becomes `anatomical_target`, `reference` becomes `origin`, and `ml_in_mm`, `ap_in_mm` and `dv_in_mm` become `x_in_mm`, `y_in_mm` and `z_in_mm` with `orientation="RAS"`. `hemisphere` has no equivalent.
 - Files written with ndx-optogenetics 0.4.0 or earlier cache ndx-ophys-devices 0.3.x and cannot be read in a Python session that has imported ndx-optogenetics 0.5.0 or ndx-ophys-devices 0.4.0. Open them in a session that does not import these packages; pynwb then loads the cached namespaces.
 - Code that still imports `FiberInsertion` from ndx-ophys-devices, such as trodes_to_nwb, fails with ndx-optogenetics 0.5.0 until it is updated. Until then, install `"ndx-optogenetics<0.5"`, which resolves to 0.4.1 and ndx-ophys-devices 0.3.1.
-- Dropped support for Python 3.9 and added Python 3.14 to the test matrix.
 - Fixed example values in the README and tests: the excitation source intensity now matches 77 mW through a 200 um core, and `intertrain_interval_in_ms` is NaN for a single train. The test now writes to a temporary directory.
+- Dropped support for Python 3.9 and 3.10 and added Python 3.14 to the test matrix.
 
 ## v0.4.1 (October 14, 2026)
 
