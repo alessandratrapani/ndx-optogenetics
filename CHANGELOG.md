@@ -1,5 +1,9 @@
 # Changelog for ndx-optogenetics
 
+## v0.5.0 (Upcoming)
+
+- Dropped support for Python 3.9 and 3.10 and added Python 3.14 to the test matrix.
+
 ## v0.4.1 (October 14, 2026)
 
 The schema is unchanged apart from the namespace version.

@@ -29,24 +29,21 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { name: linux-python3.9-minimum      , requirements: minimum    , python-ver: "3.9" , os: ubuntu-latest }
-          - { name: linux-python3.9              , requirements: upgraded   , python-ver: "3.9" , os: ubuntu-latest }
-          - { name: linux-python3.10             , requirements: upgraded   , python-ver: "3.10", os: ubuntu-latest }
+          - { name: linux-python3.11-minimum     , requirements: minimum    , python-ver: "3.11", os: ubuntu-latest }
           - { name: linux-python3.11             , requirements: upgraded   , python-ver: "3.11", os: ubuntu-latest }
           - { name: linux-python3.12             , requirements: upgraded   , python-ver: "3.12", os: ubuntu-latest }
           - { name: linux-python3.13             , requirements: upgraded   , python-ver: "3.13", os: ubuntu-latest }
-          - { name: windows-python3.9-minimum    , requirements: minimum    , python-ver: "3.9" , os: windows-latest }
-          - { name: windows-python3.9            , requirements: upgraded   , python-ver: "3.9" , os: windows-latest }
-          - { name: windows-python3.10           , requirements: upgraded   , python-ver: "3.10", os: windows-latest }
+          - { name: linux-python3.14             , requirements: upgraded   , python-ver: "3.14", os: ubuntu-latest }
+          - { name: windows-python3.11-minimum   , requirements: minimum    , python-ver: "3.11", os: windows-latest }
           - { name: windows-python3.11           , requirements: upgraded   , python-ver: "3.11", os: windows-latest }
           - { name: windows-python3.12           , requirements: upgraded   , python-ver: "3.12", os: windows-latest }
           - { name: windows-python3.13           , requirements: upgraded   , python-ver: "3.13", os: windows-latest }
-          - { name: macos-python3.9-minimum      , requirements: minimum    , python-ver: "3.9" , os: macos-latest }
-          - { name: macos-python3.9              , requirements: upgraded   , python-ver: "3.9" , os: macos-latest }
-          - { name: macos-python3.10             , requirements: upgraded   , python-ver: "3.10", os: macos-latest }
+          - { name: windows-python3.14           , requirements: upgraded   , python-ver: "3.14", os: windows-latest }
+          - { name: macos-python3.11-minimum     , requirements: minimum    , python-ver: "3.11", os: macos-latest }
           - { name: macos-python3.11             , requirements: upgraded   , python-ver: "3.11", os: macos-latest }
           - { name: macos-python3.12             , requirements: upgraded   , python-ver: "3.12", os: macos-latest }
           - { name: macos-python3.13             , requirements: upgraded   , python-ver: "3.13", os: macos-latest }
+          - { name: macos-python3.14             , requirements: upgraded   , python-ver: "3.14", os: macos-latest }
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -88,7 +85,7 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.x"  # use the latest stable version of Python
+          python-version: "3.14"
 
       - name: Build and check wheel and source distribution
         run: |
@@ -134,7 +131,7 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.x"  # use the latest stable version of Python
+          python-version: "3.14"
 
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
